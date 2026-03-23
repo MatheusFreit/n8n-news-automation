@@ -51,3 +51,24 @@ Fluxo automatizado que roda **2x por dia (08:00 e 20:00)** coletando notícias, 
 ## 📥 Como usar
 
 1. Importe o arquivo:
+ - workflows/news-automation.json
+2. Configure:
+- Redis
+- OpenRouter
+- Discord
+  
+---
+
+## 🚀 Objetivo
+
+Projeto criado para estudo de:
+- automação
+- integração de APIs
+- uso de IA em pipelines
+
+---
+
+## 💬 Observação
+
+Em breve melhorias e novas integrações 🚀
+
