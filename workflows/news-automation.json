@@ -13,49 +13,11 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -704,
-        -160
+        -96,
+        320
       ],
-      "id": "3e3f2c33-58b9-47a4-971c-86fd8df050ac",
+      "id": "54d6c75c-2415-4964-95cd-7f982f8c46e1",
       "name": "Schedule Trigger"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -688,
-        -432
-      ],
-      "id": "245595d3-a810-4f0c-9c1c-f6f77403f36c",
-      "name": "When clicking ‘Execute workflow’"
-    },
-    {
-      "parameters": {
-        "maxItems": 5
-      },
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        32,
-        -480
-      ],
-      "id": "182bb3e1-91ed-4a8a-af67-70e72d9135f0",
-      "name": "Limit"
-    },
-    {
-      "parameters": {
-        "url": "https://olhardigital.com.br/editorias/noticias/feed/",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1.2,
-      "position": [
-        -192,
-        -480
-      ],
-      "id": "708c7e60-0020-4d8a-8e1b-bff3de5bff36",
-      "name": "RSS OLHAR DIGITAL"
     },
     {
       "parameters": {
@@ -65,10 +27,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        -192,
-        -160
+        416,
+        320
       ],
-      "id": "d4e9a879-1f89-4054-8c2d-a3c83d68d733",
+      "id": "69f6524c-751f-4380-aac2-f5ba1c899e07",
       "name": "RSS CNN BRASIL"
     },
     {
@@ -78,10 +40,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        32,
-        -144
+        640,
+        336
       ],
-      "id": "1e2ba21c-9af1-4115-b377-5e48830faa64",
+      "id": "9f7b29bf-59b3-4fd0-9e81-270fc405de97",
       "name": "Limit1"
     },
     {
@@ -92,10 +54,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        -192,
-        -336
+        416,
+        144
       ],
-      "id": "6f260767-aa03-473b-833c-24b80f553380",
+      "id": "4f9e5115-31af-4be2-81fb-1d814a5a06cb",
       "name": "RSS CANAL TECH"
     },
     {
@@ -105,10 +67,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        32,
-        -320
+        640,
+        160
       ],
-      "id": "a8d3ef5d-b4f7-4a11-b2a8-775bca76a646",
+      "id": "278315f7-8549-4c55-9186-3fdf82f170ff",
       "name": "Limit2"
     },
     {
@@ -120,17 +82,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        1376,
-        320
+        1984,
+        800
       ],
-      "id": "2554b26e-95b7-4788-a74e-6c8400947450",
+      "id": "c2b00d94-49bc-4cea-85d9-0f7128b81dde",
       "name": "Discord",
-      "webhookId": "50ea8fa2-9583-4924-b48c-038b3628dea5",
+      "webhookId": "",
       "credentials": {
-        "discordWebhookApi": {
-          "id": "3PloGkqx88q9l6Gh",
-          "name": "Discord Chat Cotação"
-        }
+       }
       }
     },
     {
@@ -141,10 +100,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        256,
-        304
+        864,
+        784
       ],
-      "id": "2c7a342f-a103-40ae-9aaa-b0f6397b32c0",
+      "id": "9e5cc763-7900-4dd6-9ac9-b4ca0a8db22c",
       "name": "Split Out"
     },
     {
@@ -174,33 +133,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        848,
-        304
+        1456,
+        784
       ],
-      "id": "c1ac8b8d-4703-4318-9d8d-bdbaecab358f",
+      "id": "5e9f21d1-ae47-41ce-89c2-0ac3bb5f4b82",
       "name": "If"
-    },
-    {
-      "parameters": {
-        "authentication": "webhook",
-        "content": "=📰 Notícias do Dia\n\nOlá! Essas são suas notícias de hoje:\n\n🔹 Título: {{ $('Limit').item.json.title }}\n\n📝 Resumo: {{ $('Limit').item.json.contentSnippet }}\n\n\n🔗 Leia mais: {{ $('Limit').item.json.link }}\n\n🏷️ Tags: {{ $('Limit').item.json.categories }}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.discord",
-      "typeVersion": 2,
-      "position": [
-        1376,
-        -512
-      ],
-      "id": "fa89ee0b-9c94-4b19-ad5e-35e242382060",
-      "name": "Canal  Digital",
-      "webhookId": "50ea8fa2-9583-4924-b48c-038b3628dea5",
-      "credentials": {
-        "discordWebhookApi": {
-          "id": "4XCsHdNfIcPgabjB",
-          "name": "Discord Chat noticias hoje"
-        }
-      }
     },
     {
       "parameters": {
@@ -211,16 +148,13 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        1376,
-        -320
+        1984,
+        160
       ],
-      "id": "922f243d-cb40-4c5c-adfd-63a8a4e1ca00",
+      "id": "ccbedb75-e0e0-4c09-9a50-92fd584a04fe",
       "name": "canal tech",
-      "webhookId": "50ea8fa2-9583-4924-b48c-038b3628dea5",
+      "webhookId": "",
       "credentials": {
-        "discordWebhookApi": {
-          "id": "4XCsHdNfIcPgabjB",
-          "name": "Discord Chat noticias hoje"
         }
       }
     },
@@ -233,10 +167,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        992,
-        -416
+        1600,
+        64
       ],
-      "id": "1e31fb74-0879-4578-9101-5307813163ee",
+      "id": "f2bc736b-3d67-4c1c-9d76-d3d9e93b54e3",
       "name": "Basic LLM Chain"
     },
     {
@@ -247,16 +181,13 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
       "typeVersion": 1,
       "position": [
-        896,
-        -304
+        1504,
+        176
       ],
-      "id": "cdcc42da-f0f4-4bdd-b2dd-8150125e4b2e",
+      "id": "b6bab9de-5fc2-4323-bf20-a660e43de2d1",
       "name": "OpenRouter Chat Model",
       "credentials": {
-        "openRouterApi": {
-          "id": "UuDXTuA64czWhZnx",
-          "name": "OpenRouter account"
-        }
+       
       }
     },
     {
@@ -268,17 +199,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        1376,
-        144
+        1984,
+        624
       ],
-      "id": "ce14fefa-10c5-4a49-aade-bcf58a742caa",
+      "id": "72ad3b4c-2ec1-491e-a79c-89a6718e8f57",
       "name": "Youtuber",
-      "webhookId": "50ea8fa2-9583-4924-b48c-038b3628dea5",
+      "webhookId": "",
       "credentials": {
-        "discordWebhookApi": {
-          "id": "9Hy5DgUcXhf3gpri",
-          "name": "Disco youtuber"
-        }
+        
       }
     },
     {
@@ -298,10 +226,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -176,
-        112
+        432,
+        592
       ],
-      "id": "1f5320ef-783a-4c31-a1b2-ce7f624805e5",
+      "id": "9ace43c8-3c6c-47dc-a614-75b265b7788a",
       "name": "Edit Fields"
     },
     {
@@ -312,10 +240,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        256,
-        144
+        864,
+        624
       ],
-      "id": "b004243d-3ad5-471f-a87a-0e0633ee7926",
+      "id": "1b02126a-ca03-4b22-8c30-ee2c4d55a857",
       "name": "Split Out1"
     },
     {
@@ -331,10 +259,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -704,
-        112
+        -96,
+        592
       ],
-      "id": "8354ba31-d045-49e3-b599-7042dd484783",
+      "id": "eb0442cb-77b0-4238-8201-5e2ba6cdadda",
       "name": "Schedule Trigger1"
     },
     {
@@ -346,10 +274,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        1008,
-        -256
+        1616,
+        224
       ],
-      "id": "964544f9-1b43-4ad9-a2af-d6137a9e583d",
+      "id": "51d5e56d-acf3-40fb-b6f7-6f33e9d4ef87",
       "name": "Basic LLM Chain1"
     },
     {
@@ -360,16 +288,13 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
       "typeVersion": 1,
       "position": [
-        912,
-        -112
+        1520,
+        368
       ],
-      "id": "f6ce643c-5298-4f25-84af-56dbf77b77ac",
+      "id": "9a5395f9-1978-4fa1-a1e6-4774cf734c0d",
       "name": "OpenRouter Chat Model1",
       "credentials": {
-        "openRouterApi": {
-          "id": "UuDXTuA64czWhZnx",
-          "name": "OpenRouter account"
-        }
+        
       }
     },
     {
@@ -381,17 +306,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        1376,
-        -128
+        1984,
+        352
       ],
-      "id": "0c5fb358-18ad-4964-9d8b-b540dd55825c",
+      "id": "5dcc76ba-75aa-482b-85a1-575d5945a299",
       "name": "canal cnn",
-      "webhookId": "50ea8fa2-9583-4924-b48c-038b3628dea5",
+      "webhookId": "",
       "credentials": {
-        "discordWebhookApi": {
-          "id": "4XCsHdNfIcPgabjB",
-          "name": "Discord Chat noticias hoje"
-        }
+        
       }
     },
     {
@@ -401,74 +323,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        992,
-        128
+        1600,
+        608
       ],
-      "id": "46e8ef0c-4f37-4398-bc17-d7f6854aa038",
+      "id": "0379654f-9c5c-4421-9daa-ef0b476db7db",
       "name": "Code in JavaScript"
-    },
-    {
-      "parameters": {
-        "content": "## Servidor Discord ",
-        "height": 1056,
-        "width": 304
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        1280,
-        -592
-      ],
-      "id": "0554f296-9670-4b9a-8852-142b0b4e7051",
-      "name": "Sticky Note"
-    },
-    {
-      "parameters": {
-        "content": "## Servidor AI \n\nResumido os principais pontos importantes e criando tags ",
-        "height": 624,
-        "width": 448,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        816,
-        -592
-      ],
-      "id": "2800fb94-cba0-4563-9945-ed22cfe74de0",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "content": "## LIMITADOR DE NOTICIAS\n",
-        "height": 576,
-        "width": 192,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -16,
-        -592
-      ],
-      "id": "4dd2fce8-3aa8-4628-aca3-6174e8ef3940",
-      "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "content": "## RSS SITES\n\nPRINCIPAIS SITES DE NOTICIAS",
-        "height": 576,
-        "width": 368,
-        "color": 5
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -416,
-        -592
-      ],
-      "id": "7cfbf639-9d28-4301-8781-3346bfb32251",
-      "name": "Sticky Note3"
     },
     {
       "parameters": {
@@ -480,10 +339,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -416,
-        288
+        192,
+        768
       ],
-      "id": "ee267945-b4f0-44db-8dbb-04e83e7f02fb",
+      "id": "a467d4bd-80f7-4651-bdf0-d4e026711271",
       "name": "Sticky Note4"
     },
     {
@@ -496,10 +355,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        816,
-        48
+        1424,
+        528
       ],
-      "id": "f9e85782-3408-4cfd-9397-3cf35acbfdc6",
+      "id": "c778316e-07e6-424c-830e-0395651b8ada",
       "name": "Sticky Note5"
     },
     {
@@ -512,10 +371,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        432,
-        48
+        1040,
+        528
       ],
-      "id": "1308407e-c21b-44d2-b343-72cf78bc9f7b",
+      "id": "78203b1e-215d-4839-a4fb-12f1ad443a90",
       "name": "Sticky Note6"
     },
     {
@@ -526,10 +385,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        672,
-        96
+        1280,
+        576
       ],
-      "id": "7c1c7ee5-f5b7-4f38-b0db-39b27cf49d9a",
+      "id": "effea826-9bc5-4b4a-a608-22c8fdcc276a",
       "name": "RSS YOUTUBER"
     },
     {
@@ -541,26 +400,11 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        208,
-        32
+        816,
+        512
       ],
-      "id": "ee4c0457-23ea-4ee8-ab3d-11568d61fd1d",
+      "id": "65a7d328-6bac-4d98-b9ab-adc97ae3710d",
       "name": "Sticky Note7"
-    },
-    {
-      "parameters": {
-        "content": "### TRIGGER ",
-        "height": 1088,
-        "width": 384
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -816,
-        -592
-      ],
-      "id": "383605eb-45e4-460e-91c5-2e8add343202",
-      "name": "Sticky Note8"
     },
     {
       "parameters": {
@@ -571,27 +415,11 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -416,
-        0
+        192,
+        480
       ],
-      "id": "95ab48e9-89a4-478c-a8a4-3a790055ac74",
+      "id": "1f0d1fbb-a22f-42b1-b23b-92de5ba5df00",
       "name": "Sticky Note9"
-    },
-    {
-      "parameters": {
-        "content": "# Atualizações de noticias do dia",
-        "height": 1248,
-        "width": 2480,
-        "color": 7
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -832,
-        -704
-      ],
-      "id": "f305b404-a892-4bdc-b3e9-8e0f595126f1",
-      "name": "Sticky Note10"
     },
     {
       "parameters": {
@@ -603,10 +431,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -832,
-        560
+        -224,
+        1040
       ],
-      "id": "55b4f3ee-2697-42bb-a98a-e76f5a9fbb2a",
+      "id": "ee64f964-9b88-4c57-a166-0ae1ed0a55d7",
       "name": "Sticky Note11"
     },
     {
@@ -616,10 +444,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -176,
-        784
+        432,
+        1264
       ],
-      "id": "0284715d-4e90-4d43-b085-00da682976fc",
+      "id": "df8ce83e-cc86-4c24-abfb-9104ec5a873b",
       "name": "Code in JavaScript1"
     },
     {
@@ -627,11 +455,7 @@
         "resource": "message",
         "operation": "getAll",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list",
-          "cachedResultName": "Servidor de Noticias",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242"
+         
         },
         "channelId": {
           "__rl": true,
@@ -646,17 +470,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        -416,
-        976
+        192,
+        1456
       ],
-      "id": "13170617-e0ae-402e-acdb-5fa976361e4c",
+      "id": "9118bdc2-2f57-4e6b-a5e4-b28de39c95a6",
       "name": "Listar Canal YB",
-      "webhookId": "4e781d0b-a875-4d60-aa41-dbc2ca891e80",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+       
       }
     },
     {
@@ -664,16 +485,9 @@
         "resource": "message",
         "operation": "getAll",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list"
+         
         },
         "channelId": {
-          "__rl": true,
-          "value": "1481397230501105746",
-          "mode": "list",
-          "cachedResultName": "noticias-hoje",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242/1481397230501105746"
         },
         "returnAll": true,
         "options": {}
@@ -681,17 +495,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        -416,
-        784
+        192,
+        1264
       ],
-      "id": "73284938-7895-42d2-8e8e-be90d9463901",
+      "id": "20499ce1-29c7-4191-8a49-c8de0ec09db1",
       "name": "Listar NH",
-      "webhookId": "4e781d0b-a875-4d60-aa41-dbc2ca891e80",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+        
       }
     },
     {
@@ -701,10 +512,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -176,
-        976
+        432,
+        1456
       ],
-      "id": "21af90f4-e459-4e40-8280-ae387cbced31",
+      "id": "73971de1-82fc-4f0d-a3bc-4bccec87b405",
       "name": "Code in JavaScript2"
     },
     {
@@ -714,10 +525,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -176,
-        1168
+        432,
+        1648
       ],
-      "id": "0d77461b-015c-4dc4-96c2-9ff633f63864",
+      "id": "3930c7d1-9450-4ccf-a700-61f9b377e0f3",
       "name": "Code in JavaScript3"
     },
     {
@@ -725,18 +536,10 @@
         "resource": "message",
         "operation": "getAll",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list",
-          "cachedResultName": "Servidor de Noticias",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242"
+          
         },
         "channelId": {
-          "__rl": true,
-          "value": "1481392288419680350",
-          "mode": "list",
-          "cachedResultName": "contação",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242/1481392288419680350"
+          
         },
         "returnAll": true,
         "options": {}
@@ -744,17 +547,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        -416,
-        1168
+        192,
+        1648
       ],
-      "id": "db3a81f4-9924-4f43-a25e-5c889b2deffa",
+      "id": "8303f382-cf35-4b3c-8d71-2e4943eec3ae",
       "name": "Listar Canal Cota",
-      "webhookId": "4e781d0b-a875-4d60-aa41-dbc2ca891e80",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+        
       }
     },
     {
@@ -771,10 +571,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -784,
-        992
+        -176,
+        1472
       ],
-      "id": "c2030684-b5f9-4af8-95a4-0e27648c7686",
+      "id": "bd8f3c33-159d-4b24-bd07-fcb0c0f46915",
       "name": "A cada 2 horas"
     },
     {
@@ -782,33 +582,24 @@
         "resource": "message",
         "operation": "deleteMessage",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list"
+         
         },
         "channelId": {
-          "__rl": true,
-          "value": "1481410679280898232",
-          "mode": "list",
-          "cachedResultName": "canal-youtuber",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242/1481410679280898232"
+         
         },
         "messageId": "={{ $json.id }}"
       },
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        96,
-        976
+        704,
+        1456
       ],
-      "id": "c244714a-7e32-4243-964b-5aa195578daa",
+      "id": "c7c9ec0d-a694-4fd8-a51c-1ef8e89f98a5",
       "name": "CANAL YB",
-      "webhookId": "64ab074b-72d2-4353-bc1f-8fdb289e5d31",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+        
       }
     },
     {
@@ -816,33 +607,24 @@
         "resource": "message",
         "operation": "deleteMessage",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list"
+         
         },
         "channelId": {
-          "__rl": true,
-          "value": "1481397230501105746",
-          "mode": "list",
-          "cachedResultName": "noticias-hoje",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242/1481397230501105746"
+         
         },
         "messageId": "={{ $json.id }}"
       },
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        96,
-        784
+        704,
+        1264
       ],
-      "id": "89590a3e-93cd-472b-9d1a-5297cc95abd5",
+      "id": "76eca818-c59c-4d93-b9dc-8f55454e98d8",
       "name": "CANAL NH",
-      "webhookId": "64ab074b-72d2-4353-bc1f-8fdb289e5d31",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+        
       }
     },
     {
@@ -850,33 +632,24 @@
         "resource": "message",
         "operation": "deleteMessage",
         "guildId": {
-          "__rl": true,
-          "value": "1471481366569943242",
-          "mode": "list"
+         
         },
         "channelId": {
-          "__rl": true,
-          "value": "1481392288419680350",
-          "mode": "list",
-          "cachedResultName": "contação",
-          "cachedResultUrl": "https://discord.com/channels/1471481366569943242/1481392288419680350"
+         
         },
         "messageId": "={{ $json.id }}"
       },
       "type": "n8n-nodes-base.discord",
       "typeVersion": 2,
       "position": [
-        96,
-        1168
+        704,
+        1648
       ],
-      "id": "57edc87f-ac89-4574-b989-3268c0bb71fe",
+      "id": "3381c74e-be25-44f1-bc55-0858dc769b38",
       "name": "CANAL CONTACAO",
-      "webhookId": "64ab074b-72d2-4353-bc1f-8fdb289e5d31",
+      "webhookId": "",
       "credentials": {
-        "discordBotApi": {
-          "id": "FpUiE5KHYx0GlOqJ",
-          "name": "Discord Bot"
-        }
+        
       }
     },
     {
@@ -907,105 +680,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        432,
-        -480
+        1024,
+        176
       ],
-      "id": "83f0aa6b-5e2f-447d-965a-d68f3557745a",
-      "name": "If1"
-    },
-    {
-      "parameters": {
-        "content": "## REDIS CACHE \n\nVerificar se a notícia já foi enviada",
-        "height": 576,
-        "width": 608,
-        "color": 5
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        192,
-        -592
-      ],
-      "id": "0f8e0f84-6021-4758-8de2-92a03e8b3277",
-      "name": "Sticky Note12"
-    },
-    {
-      "parameters": {
-        "operation": "get",
-        "propertyName": "redis_value",
-        "key": "={{ $json.guid }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        256,
-        -480
-      ],
-      "id": "9f13130a-52c8-4245-9df9-1396b889c280",
-      "name": "Redis Get",
-      "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "set",
-        "key": "={{ $('Limit').item.json.guid }}",
-        "value": "1",
-        "expire": true,
-        "ttl": 86400
-      },
-      "type": "n8n-nodes-base.redis",
-      "typeVersion": 1,
-      "position": [
-        672,
-        -512
-      ],
-      "id": "4e0f6016-a455-40a9-a2c1-165a662e7df3",
-      "name": "Redis Set",
-      "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "eb896c76-11b8-4492-975c-a506a88f86f8",
-              "leftValue": "={{$json.redis_value}}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "empty",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        416,
-        -304
-      ],
-      "id": "f590c865-9e0a-4677-b7bb-28710cf0147f",
+      "id": "5c465ab8-e884-426c-bcaa-4313f776b8ac",
       "name": "If2"
     },
     {
@@ -1018,16 +696,13 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        240,
-        -304
+        848,
+        176
       ],
-      "id": "f98be8f5-41a4-4b83-9891-c39bb00d0e4a",
+      "id": "7359c96d-94a5-4428-917d-6d53aaec37a4",
       "name": "Redis Get1",
       "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
+        
       }
     },
     {
@@ -1041,16 +716,13 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        656,
-        -304
+        1264,
+        176
       ],
-      "id": "1511a606-de0a-465f-941d-8facea4beb52",
+      "id": "f42c1c13-4f43-4948-acbb-8058a3c150b0",
       "name": "Redis Set1",
       "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
+       
       }
     },
     {
@@ -1081,10 +753,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        416,
-        -144
+        1024,
+        336
       ],
-      "id": "8b6c2c12-dce7-4fc0-8f7a-8a019a252d40",
+      "id": "6dc0d655-ce65-4e37-b9c9-117d5a692051",
       "name": "If3"
     },
     {
@@ -1097,16 +769,13 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        240,
-        -144
+        848,
+        336
       ],
-      "id": "2b4b923f-905e-4ea0-a119-32cab65c5a67",
+      "id": "8153103c-1852-4d12-9fd1-6f3b19b17184",
       "name": "Redis Get2",
       "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
+        
       }
     },
     {
@@ -1120,16 +789,13 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        656,
-        -144
+        1264,
+        336
       ],
-      "id": "da48c140-bd2e-4d73-ac63-189de304035a",
+      "id": "4889a402-3966-4036-8cab-ee2db2bd6146",
       "name": "Redis Set2",
       "credentials": {
-        "redis": {
-          "id": "xtzhVRuCXZHxWeDj",
-          "name": "Redis account"
-        }
+       
       }
     },
     {
@@ -1149,10 +815,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -368,
-        384
+        240,
+        864
       ],
-      "id": "abe87be1-9826-4692-9f8c-ae6fb58aff2c",
+      "id": "3b6199ea-4343-467c-b731-4b278532fafa",
       "name": "Código da moeda (ISO 4217)"
     },
     {
@@ -1162,10 +828,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1088,
-        288
+        1696,
+        768
       ],
-      "id": "6a092519-a606-4b36-936e-f9caad23d599",
+      "id": "043efb63-4ae5-4358-b2bf-e661334c594b",
       "name": "Code in JavaScript4"
     },
     {
@@ -1176,10 +842,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        -144,
-        384
+        464,
+        864
       ],
-      "id": "4c7f50fd-c9d8-4685-9626-e2218e00b210",
+      "id": "ad1ea6d3-465a-4491-bc01-592f230399e6",
       "name": "Array id"
     },
     {
@@ -1190,10 +856,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        368
+        640,
+        848
       ],
-      "id": "1941df91-48b2-4be8-b234-33e2dcba53ff",
+      "id": "24f55da1-14af-4606-913f-c0f642ad005a",
       "name": "BRASIL API"
     }
   ],
@@ -1201,11 +867,6 @@
     "Schedule Trigger": {
       "main": [
         [
-          {
-            "node": "RSS OLHAR DIGITAL",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "RSS CANAL TECH",
             "type": "main",
@@ -1223,54 +884,6 @@
           },
           {
             "node": "Código da moeda (ISO 4217)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "RSS OLHAR DIGITAL",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "RSS CANAL TECH",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "RSS CNN BRASIL",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Limit": {
-      "main": [
-        [
-          {
-            "node": "Redis Get",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "RSS OLHAR DIGITAL": {
-      "main": [
-        [
-          {
-            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -1321,11 +934,6 @@
         ]
       ]
     },
-    "Discord": {
-      "main": [
-        []
-      ]
-    },
     "Split Out": {
       "main": [
         [
@@ -1346,11 +954,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Canal  Digital": {
-      "main": [
-        []
       ]
     },
     "Basic LLM Chain": {
@@ -1400,11 +1003,6 @@
     "Schedule Trigger1": {
       "main": [
         [
-          {
-            "node": "RSS OLHAR DIGITAL",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "RSS CANAL TECH",
             "type": "main",
@@ -1548,39 +1146,6 @@
           },
           {
             "node": "Listar Canal Cota",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If1": {
-      "main": [
-        [
-          {
-            "node": "Redis Set",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Redis Get": {
-      "main": [
-        [
-          {
-            "node": "If1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Redis Set": {
-      "main": [
-        [
-          {
-            "node": "Canal  Digital",
             "type": "main",
             "index": 0
           }
